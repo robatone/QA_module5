@@ -1,5 +1,5 @@
 import unittest
-from data_clean_script import *
+from Docker_data_clean.data_clean_script import *
 import random
 
 
