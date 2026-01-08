@@ -54,8 +54,8 @@ def cleanBookCSV():
     # WeeksToDays(sys_book_df, "DaysAllowedToBorrow")
     daysOnLoan(sys_book_df, "BookReturned", "BookCheckout", "DaysOnLoan" )
 
-    sys_book_df.to_csv("/app/data/generic_storage/system_book_cleaned.csv", index=False)
-    sys_cust_df.to_csv("/app/data/generic_storage/system_customer_cleaned.csv", index=False)
+    sys_book_df.to_csv("./data/system_book_cleaned.csv", index=False)
+    sys_cust_df.to_csv("./data/system_customer_cleaned.csv", index=False)
     
 
 if __name__ == "__main__":
