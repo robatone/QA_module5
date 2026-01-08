@@ -18,6 +18,7 @@ def pascalCase():
 def removeNA():
     # remove null rows in the book column
     sys_book_df.dropna(subset=["Books"], inplace=True)
+    sys_cust_df.dropna(inplace=True)
 
 def fixDateFormat():
     # alter 32/05/23 to 31/05/23 stip " from bookCheckout and convert to datetime
@@ -43,9 +44,6 @@ def WeeksToDays(df,col):
     df[col] = df[col].dt.days
   
 
-    # # remove Na record from customer
-    # sys_cust_df.dropna(inplace=True)
-
 def daysOnLoan(df, col1, col2, new_col):
     df[new_col] = (df[col1] - df[col2]).dt.days   
 
@@ -55,8 +53,10 @@ def cleanBookCSV():
     fixDateFormat()
     # WeeksToDays(sys_book_df, "DaysAllowedToBorrow")
     daysOnLoan(sys_book_df, "BookReturned", "BookCheckout", "DaysOnLoan" )
-    print(sys_book_df)
 
+    sys_book_df.to_csv("/app/data/generic_storage/system_book_cleaned.csv", index=False)
+    sys_cust_df.to_csv("/app/data/generic_storage/system_customer_cleaned.csv", index=False)
+    
 
 if __name__ == "__main__":
     cleanBookCSV()
