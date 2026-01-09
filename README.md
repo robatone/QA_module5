@@ -32,4 +32,11 @@ This has been created in the **unit_testing_data_clean_script.py** file
 ### Created a containerised Docker file
 This has been created in the **Docker_data_clean** folder. this is for testing purposes currently but can be implemented later should the product need to be shipped to another system and all its dependencies be kept intact
 
+## Final day project
+on the final day we were tasked with refactoring the clean script so that it could be used to run a diagnostic dashboard. this would show the data that had been quarantined.
+
+at this point I decided to split the **system_book** data into two data frames the original but cleaned, and a dataframe containing the quarantined issues. 
+This was then output to a power Bi dashboard and the bad data visualised using a simple graph for each type of data issue. A table was added with counts of the issues and conditional formatting to add colour that easily identified the row issues
+
+
 ![](project_final/dashboard.png)
