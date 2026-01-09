@@ -71,9 +71,12 @@ def daysOnLoan(df, col1, col2, new_col):
     sys_book_df["DaysOnLoanIssue"] = df[new_col] <= 0
 
 def datasplit():
-    masking = sys_book_df[["NaDataIssue","DateIssue","DaysOnLoanIssue"]].any(axis=1)
-    issues_df = sys_book_df[masking]
-    sys_book_df = sys_book_df[~masking]
+    mask = sys_book_df[["NaDataIssue","DateIssue","DaysOnLoanIssue"]].any(axis=1)
+    issues_df = sys_book_df[mask]
+    # sys_book_df = sys_book_df[~mask]
+    
+    print(issues_df)
+    # return sys_book_df
     issues_df.to_csv("issues_log.csv", index=False)
     
 

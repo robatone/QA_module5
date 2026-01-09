@@ -31,3 +31,5 @@ This has been created in the **unit_testing_data_clean_script.py** file
 
 ### Created a containerised Docker file
 This has been created in the **Docker_data_clean** folder. this is for testing purposes currently but can be implemented later should the product need to be shipped to another system and all its dependencies be kept intact
+
+![](project_final\dashboard.png)
